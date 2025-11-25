@@ -5,26 +5,29 @@
     <title>Завдання 2</title>
   </head>
   <body>
+    <button onclick="calculate()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Запустити обчислення
+    </button>
+
     <script>
       "use strict";
-      alert("Знаходження коренів рівняння ax^2 + bx + c = 0");
-      const a=parseInt(prompt("Введіть значення a", ""));
-      const b=parseInt(prompt("Введіть значення b", ""));
-      const c=parseInt(prompt("Введіть значення c", ""));
-      let D = (b * b) - (4 * a * c);
-      if (D<0) {
-        alert("Коренів немає");
+      function calculate() {
+        alert("Знаходження коренів рівняння ax^2 + bx + c = 0");
+        const a = parseInt(prompt("Введіть значення a", ""));
+        const b = parseInt(prompt("Введіть значення b", ""));
+        const c = parseInt(prompt("Введіть значення c", ""));
+        let D = (b * b) - (4 * a * c);
+        if (D < 0) {
+          alert("Коренів немає");
+        } else if (D === 0) {
+          let x = -b / (2 * a);
+          alert("Рівняння має один корінь. X = " + x);
+        } else {
+          let x1 = (-b + D ** 0.5) / (2 * a);
+          let x2 = (-b - D ** 0.5) / (2 * a);
+          alert("Рівняння має два корені. X1 = " + x1 + " X2 = " + x2);
+        }
       }
-      else if (D===0) {
-        let x = -b / (2 * a);
-        alert("Рівняння має один корінь. X = " + x);
-      }
-      else {
-        let x1 = (-b + D**0.5) / (2 * a);
-        let x2 = (-b - D**0.5) / (2 * a);
-        alert("Рівняння має два корені. X1 = " + x1 + " X2 = " + x2);
-      }
-
     </script>
   </body>
 </html>
